@@ -1,197 +1,179 @@
-## EXP NO 6A : C PROGRAM TO DISPLAY STACK ELEMENTS USING LINKED LIST.
+## EXP NO 3A : C PROGRAM TO DISPLAY STACK ELEMENTS USING AN ARRAY.
 
 ## Aim:
-To write a C program to display stack elements using linked list.
+To write a C program to display stack elements using an array.
 
 ## Algorithm:
-1.	Define a structure Node with two members: data to store the integer value and next to point to the next node in the linked list.
-2.	Declare a global variable head representing the starting node of the linked list.
-3.	Define a function display to print the elements of the linked list.
-4.	Declare a pointer p and initialize it with the head of the linked list.
-5.	Use a while loop to traverse the linked list:
-6.	Print the data of the current node.
-7.	Move to the next node using the next pointer.
+1.	Include Necessary Header Files
+2.	Declare Global Variables
+3.	Define the Display Function
+4.	Main Function (or Other Relevant Code)
+5.	Initialize the stack and top as needed.
+6.	Perform stack operations (push, pop, etc.).
+7.	Use the display function to visualize the stack's contents
  
 ## Program:
 ~~~
-struct Node
+int stack[40],top,i;
+ void display()
 {
-    int data;
-    struct Node *next;
-}*head;
+    for(i=top;i>=0;i--)
+       {
+           printf("%d\n",stack[i]);
+       }
+}
+~~~
+## Output:
+![437944090-301f186a-1daf-4c79-9b3e-c832544d5598](https://github.com/user-attachments/assets/e3fddc1a-7911-4b6d-982b-157feaaa7085)
+
+## Result:
+Thus, the program to display stack elements using an array is verified successfully.
+ 
+
+
+## EXP NO 3B : PROGRAM TO PUSH THE GIVEN ELEMENT IN TO A STACK USING ARRAY.
+
+## Aim:
+To create a C program to push the given element in to a stack using array.
+
+## Algorithm:
+1.	Declare global variables for the stack size, top index, and the stack itself.
+2.	Define the push function to add a floating-point number to the stack.
+3.	Initialize the stack size, top index, and the stack itself.
+4.	Call the push function as needed.
+ 
+## Program:
+~~~
+int size=3,top=1;
+float stack[40];
+void push (float data)
+{
+    if (top==size-1 )
+    {
+        printf("stack is full\n");      
+    }
+    else
+    {
+        top ++;
+        stack[top] = data;
+    }
+}
+~~~
+## Output:
+![437944304-d5971ab1-21bb-4d67-ace8-ae047a4191f3](https://github.com/user-attachments/assets/1570266c-f032-4483-ad01-67cf36783750)
+
+## Result:
+Thus, the program to push the given element in to a stack using array is verified successfully
+
+
+ 
+## EXP NO 3C : C PROGRAM TO DISPLAY QUEUE ELEMENTS USING ARRAY.
+
+## Aim:
+To write a C program to display queue elements using array
+
+## Algorithm:
+1.	Declare global variables for the queue, rear, front, and iteration.
+2.	Define the display function to print the elements of the queue.
+3.	Initialize the queue, rear, and front as needed.
+4.	Call the display function and perform other queue operations as needed.
+ 
+## Program:
+~~~
+int queue[50], rear, front,i;
 void display()
 {
-    struct Node *p; 
-    p=head;
-    while(p!=NULL)
+    if(front==-1)
     {
-        printf("%d\n",p->data);
-        p=p->next;
+        printf("No elements to display");     
+    }
+    else
+    {
+        for(i=front;i<=rear;i++)
+        {
+            printf("%d ",queue[i]);    
+        }  
+    }
+}
+~~~
+## Output:
+![437944365-aec17816-2ed5-4428-b9cc-1c959c7724c8](https://github.com/user-attachments/assets/1b7cd718-197e-4200-b9a2-3bda62e0facb)
+
+## Result:
+Thus, the program to display queue elements using array is verified successfully.
+
+
+ 
+## EXP NO 3D : C PROGRAM TO INSERT ELEMENTS IN QUEUE USING ARRAY.
+
+## Aim:
+To write a C program to insert elements in queue using array.
+
+## Algorithm:
+1.	Declare global variables for the size, rear, front, and the queue itself.
+2.	Define the enqueue function to add a float to the queue.
+3.	Initialize the rear, front, and size of the queue as needed.
+4.	Call the enqueue function as needed.
+
+## Program:
+~~~
+int size=4, rear=-1, front=-1; 
+float queue[50];
+void enqueue(float data)
+{
+    if(rear<size)
+    {
+        if(front==-1)
+        {
+            front=0;
+        }
+        rear=rear+1;
+        queue[rear]=data;
         
     }
 }
 ~~~
+
 ## Output:
-![437948226-9e14dc48-cff2-4660-a4a5-fe136871bb5b](https://github.com/user-attachments/assets/1b561316-c6fe-4c04-9f27-2e1e0f9c539c)
+![437944452-f139757a-0191-44c7-982a-90b6fdc632a5](https://github.com/user-attachments/assets/a22ed28b-7c32-4a5f-a00b-fcf104a7e8eb)
 
 ## Result:
-Thus, the program to display stack elements using linked list is verified successfully. 
+Thus, the program to insert elements in queue using array is verified successfully.
 
 
 
-## EXP NO 6B : C PROGRAM TO POP AN ELEMENT FROM THE GIVEN STACK USING 
-LINKED LIST.
-
-## Aim:
-To write a C program to pop an element from the given stack using liked list.
-
-## Algorithm:
-1.	Check for Empty Stack
-2.	If head is equal to NULL, Print "Stack is empty."
-3.	Else Proceed to the next step.
-4.	Set head to point to the next node in the stack.
- 
-## Program:
-~~~
-struct Node
-{
-    int data;
-    struct Node *next;
-}*head; 
-void pop()
-{
-    if(head==NULL)
-    {
-        printf("stack is empty");        
-    }
-    else
-    {
-        head=head->next;    
-    }
-}
-~~~
-## Output:
-![437948283-b2a82855-10bc-43d7-8052-09214dddff64](https://github.com/user-attachments/assets/76468515-199f-429e-8e0f-de502b4c3a0a)
-
-## Result:
-Thus, the program to pop an element from the given stack using liked list is verified successfully.
-
-
- 
-## EXP NO 6C : C PROGRAM TO DISPLAY QUEUE ELEMENTS USING LINKED LIST.
+ ## EXP NO 3E : C FUNCTION TO DELETE ELEMENTS IN QUEUE USING ARRAY
 
 ## Aim:
-To write a C program to display queue elements using linked list.
+To create a function in C that deletes an element from a queue implemented using an array.
 
 ## Algorithm:
-1.	Check if Queue is Empty
-2.	Display Queue Elements
-3.	Print the data of the current node pointed to by front
-4.	Update front to point to the next node.
-5.	End the display function.
- 
-## Program:
-~~~
-struct Node
-{
-    char data;
-    struct Node *next;
-}*front=NULL,*rear=NULL;
-void display()
-{
-    if(front==NULL)
-    {
-        printf("queue is empty");        
-    }
-    else
-    {
-        printf("queue elements:\n");
-        while(front!=NULL)
-        {
-            printf("%c\n",front->data);
-            front=front->next;      
-        }   
-    }
-}
-~~~
-## Output:
-![437948322-aeafa5a6-1291-4350-badc-2cf847408e78](https://github.com/user-attachments/assets/79909a16-95c5-4e85-945a-8abed7d335c9)
-
-## Result:
-Thus, the program to display queue elements using linked list is verified successfully.
-
-
- 
-## EXP NO 6D : C PROGRAM TO INSERT ELEMENTS IN QUEUE USING LINKED LIST
-
-## Aim:
-To write a C program to insert elements in queue using linked list
-
-## Algorithm:
-1.	Allocate Memory for New Node
-2.	Set Data and Next Pointer
-3.	Check if Queue is Empty
-4.	Set both front and rear to point to the new node p.
-5.	Set the next pointer of the current rear to point to the new node p.
-6.	End of Enqueue Operation
- 
-## Program:
-~~~
-struct Node
-{
-   int data;
-   struct Node *next;
-}*front=NULL,*rear=NULL;
-void enqueue(int data)
-{
-   struct Node *p=(struct Node*)malloc(sizeof(struct Node));
-   p->data=data;
-   p->next=NULL;
-   if(front==NULL)
-   {
-       front=rear=p;   
-   }
-   else
-   {
-       rear->next=p; 
-       rear=p;  
-   }
-}
-~~~
-## Output:
-![437948377-6b08f3e1-4bf3-47f7-a1ab-6602a062e9d8](https://github.com/user-attachments/assets/893baad6-56ae-4ff8-8902-29693a2a64d1)
-
-## Result:
-Thus, the program to insert elements in queue using linked list is verified successfully.
-
-
-
-## EXP NO 6E : C FUNCTION TO FIND THE PEEK OF QUEUE USING LINKED LIST.
-
-## Aim:
-The aim of this function is to retrieve the "peek" (the front element) of a queue implemented using a linked list
-
-## Algorithm:
-1.	Check if the queue is empty:
-o	If the queue is empty (i.e., the front pointer is NULL), return an error or a message indicating that the queue is empty.
-2.	Access the front element:
-o	If the queue is not empty, return the data stored in the front node of the linked list (i.e., the element at the head of the queue).
+1.	Check if the Queue is Empty
+o	If the front pointer is -1, it means the queue is empty, and there are no elements to delete. Print a message indicating that the queue is empty.
+2.	Delete the Front Element
+o	If the queue is not empty, the element at the front index is deleted.
+o	Increment the front pointer by 1 to remove the element and point to the next element in the queue.
+3.	Check if the Queue Becomes Empty After Deletion:
+o	After deletion, check if the front pointer has passed the rear pointer (front > rear). If this is true, reset both front and rear to -1, indicating that the queue is now empty.
+4.	End the Function.
 
 ## Program:
 ~~~
-struct Node
+int front, rear;
+void dequeue()
 {
-   char data;
-   struct Node *next;
-}*front=NULL,*rear=NULL;
-void peek()
-{
-    printf("%c",front->data);
+    if(front==-1&&rear==-1)
+    printf("Queue Underflow.");
+    else if(front==rear)
+    front=rear=-1;
+    else{
+        front=front+1;
+    }
 }
 ~~~
+
 ## Output:
-![437948420-4153baaa-4e15-4487-8b07-c038e71afb04](https://github.com/user-attachments/assets/82ad9a9a-0817-4e52-ab3b-23de567569db)
+![437944794-8f33d7b6-b48f-4ac8-a07e-beb41b2575dc](https://github.com/user-attachments/assets/5b6b14a9-55d7-49c0-81e9-ca4008bdfe77)
 
 ## Result:
-Thus, the program to retrieve the "peek" (the front element) of a queue implemented using a linked list is verified successfully.
-
+Thus, the function that deletes an element from a queue implemented using an array is verified successfully.
